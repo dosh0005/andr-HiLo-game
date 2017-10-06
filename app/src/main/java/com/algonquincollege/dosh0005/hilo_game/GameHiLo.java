@@ -18,7 +18,7 @@ public class GameHiLo {
     private String returnMsg;
 
     // CONSTRUCTORS
-    public GameHiLo(String PlayerName){
+    public GameHiLo(String PlayerName) {
         setPlayerName(PlayerName);
         gameReset();
     }
@@ -47,7 +47,7 @@ public class GameHiLo {
         this.returnMsg = returnMsg;
     }
 
-    public void incrementUserInputCount(){
+    public void incrementUserInputCount() {
         short uic = getUserInutCount();
         uic = (short) (uic + 1);
         setUserInutCount(uic);
@@ -79,31 +79,31 @@ public class GameHiLo {
     }
 
     // Player input and game play
-    public boolean userAttempt(short userInput){
+    public boolean userAttempt(short userInput) {
         setUserInput(userInput);
         short uic = getUserInutCount();
         short gl = getGuessLimit();
         short rn = getRandomNumber();
 
-        if(uic <= gl){
-            if(rn == userInput){
-                if(uic <= (gl / 2)){
+        if (uic <= gl) {
+            if (rn == userInput) {
+                if (uic <= (gl / 2)) {
                     setRMsg("winm1");
-                }else{
+                } else {
                     setRMsg("winf2");
                 }
                 return true;
-            }else{
-                if(userInput < rn){
+            } else {
+                if (userInput < rn) {
                     setRMsg("fail1");
                     return false;
                 }
-                if(userInput > rn){
+                if (userInput > rn) {
                     setRMsg("fail2");
                     return false;
                 }
             }
-        }else{
+        } else {
             setRMsg("fail3");
             return false;
         }
@@ -113,15 +113,15 @@ public class GameHiLo {
 
 
     // game reset function
-    public void gameReset(){
+    public void gameReset() {
         setUserInutCount((short) 0);
         setRandomNumber();
     }
 
     // count user's remaining plays
-    public short getGuessRemain(){
+    public short getGuessRemain() {
         short r = (short) (getGuessLimit() - getUserInutCount());
-        if(r < 0)
+        if (r < 0)
             r = 0;
         return r;
     }

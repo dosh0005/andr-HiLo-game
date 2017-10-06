@@ -22,8 +22,8 @@ public class AboutDialogFragment extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         // Use the Builder class for convenient dialog construction
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        EditText plName = (EditText)((Activity)getContext()).findViewById(R.id.getPlayerName);
-        String DialogMsg = "" + getText(R.string.dialog_about_msg) + plName.getText() + " ";
+        EditText plName = (EditText) ((Activity) getContext()).findViewById(R.id.getPlayerName);
+        String DialogMsg = "" + getText(R.string.dialog_about_msg) +" "+ plName.getText() + " ";
 
         // Decorate our About dialog
         builder.setTitle(R.string.menuAbout)

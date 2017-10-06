@@ -25,9 +25,9 @@ public class MainActivity extends AppCompatActivity {
     private static String ABOUT_DIALOG_TAG = "About Dialog";
     private LinearLayout layout_init;
     private RelativeLayout layout_game;
-    private Button btn1,btn2,btn3,btn4;
-    private EditText plname,plGuess;
-    private TextView gr,gu;
+    private Button btn1, btn2, btn3, btn4;
+    private EditText plname, plGuess;
+    private TextView gr, gu;
     private GameHiLo game;
 
     // onCreate function
@@ -53,11 +53,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 short g = (short) Integer.parseInt(plGuess.getText().toString());
-                if(validateUsername(g)){
+                if (validateUsername(g)) {
                     game.userAttempt(g);
                     game_stat();
                     Toast.makeText(getApplicationContext()
-                            ,game_msg()
+                            , game_msg()
                             , Toast.LENGTH_SHORT).show();
                 }
             }
@@ -78,13 +78,12 @@ public class MainActivity extends AppCompatActivity {
 
                 String ans = "Answer : " + String.valueOf(game.getRandomNumber());
                 Toast.makeText(getApplicationContext()
-                        ,ans
+                        , ans
                         , Toast.LENGTH_SHORT).show();
                 game_restart();
                 return true;
             }
         });
-
 
 
         btn4.setOnClickListener(new View.OnClickListener() {
@@ -102,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.mainmenu,menu);
+        getMenuInflater().inflate(R.menu.mainmenu, menu);
         return true;
     }
 
@@ -115,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
         switch (id) {
             case R.id.menuAbout:
                 DialogFragment aboutFragment = new AboutDialogFragment();
-                aboutFragment.show(getFragmentManager(),ABOUT_DIALOG_TAG);
+                aboutFragment.show(getFragmentManager(), ABOUT_DIALOG_TAG);
                 break;
             case R.id.menuAppInfo:
                 Toast.makeText(getApplicationContext()
@@ -129,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
     // initialize game function
     // connect xml with java element
 
-    private void init_app(){
+    private void init_app() {
         layout_init = (LinearLayout) findViewById(R.id.layout_init);
         layout_game = (RelativeLayout) findViewById(R.id.layout_game);
 
@@ -153,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
 
     // game start function
 
-    private void game_start(String playerName){
+    private void game_start(String playerName) {
         layout_init.setVisibility(LinearLayout.GONE);
         layout_game.setVisibility(RelativeLayout.VISIBLE);
         plGuess.setText("");
@@ -164,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
 
     // game restart function
 
-    private void game_restart(){
+    private void game_restart() {
         plGuess.setText("");
         game.gameReset();
         game_stat();
@@ -172,17 +171,17 @@ public class MainActivity extends AppCompatActivity {
 
     // set game player status
 
-    private void  game_stat(){
+    private void game_stat() {
         gr.setText(String.valueOf(game.getGuessRemain()));
         gu.setText(String.valueOf(game.getUserInutCount()));
     }
 
     // set message string
 
-    private String game_msg(){
+    private String game_msg() {
         String caseString = game.getRMsg();
         String rs = "";
-        switch (caseString){
+        switch (caseString) {
             case "winm1":
                 rs = getString(R.string.winm1);
                 break;
@@ -208,11 +207,11 @@ public class MainActivity extends AppCompatActivity {
     // user input validation
 
     private boolean validateUsername(short userInput) {
-            if (userInput > 1000 ){
-                plGuess.setError(getString(R.string.guess_validation_Err));
-                plGuess.requestFocus();
-                return false;
-            }
+        if (userInput > 1000) {
+            plGuess.setError(getString(R.string.guess_validation_Err));
+            plGuess.requestFocus();
+            return false;
+        }
         return true;
     }
 
