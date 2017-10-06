@@ -50,7 +50,7 @@ public class GameHiLo {
     public void incrementUserInputCount() {
         short uic = getUserInutCount();
         uic = (short) (uic + 1);
-        setUserInutCount(uic);
+            setUserInutCount(uic);
     }
 
     // GET METHODS
@@ -59,7 +59,10 @@ public class GameHiLo {
     }
 
     public short getUserInutCount() {
-        return userInutCount;
+        if(userInutCount < 10){
+            return userInutCount;
+        }
+        return (short) 10;
     }
 
     public short getRandomNumber() {
@@ -81,7 +84,7 @@ public class GameHiLo {
     // Player input and game play
     public boolean userAttempt(short userInput) {
         setUserInput(userInput);
-        short uic = getUserInutCount();
+        short uic = userInutCount;
         short gl = getGuessLimit();
         short rn = getRandomNumber();
 
