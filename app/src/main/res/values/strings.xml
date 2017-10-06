@@ -23,7 +23,7 @@
     <string name="winm2">Excellent win!</string>
     <string name="fail1">too low</string>
     <string name="fail2">too high</string>
-    <string name="fail3">Please Reset</string>
+    <string name="fail3">Please Reset: no More Moves</string>
     <!--<string name=""></string>-->
 
 </resources>
