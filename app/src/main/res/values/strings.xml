@@ -1,3 +1,29 @@
 <resources>
-    <string name="app_name">HiLo_game</string>
+    <string name="app_name">HiLo Game</string>
+    <string name="author">Harsh - dosh0005</string>
+    <string name="nf">Harsh</string>
+    <string name="nl">Doshi</string>
+    <string name="app_ver"></string>
+    <string name="menuAbout" >About User</string>
+    <string name="MenuAppInfo" >App Info</string>
+    <string name="dialog_about_msg">Player Name : </string>
+    <string name="ok">Thank You</string>
+    <string name="l1_title">Welcome</string>
+    <string name="hint_name">Player Name</string>
+    <string name="btn_start">Let\'s Start</string>
+    <string name="l2_title">Game in progress</string>
+    <string name="ps1">Guess remains</string>
+    <string name="ps2">Guess Used</string>
+    <string name="guess_validation_Err">number between the range of 1 and 1000</string>
+    <string name="btn_guess">Guess</string>
+    <string name="btn_reset">Reset Game</string>
+    <string name="btn_reset_tost">Game Reset!</string>
+    <string name="btn_restart">Restart Game</string>
+    <string name="winm1">Superior win!</string>
+    <string name="winm2">Excellent win!</string>
+    <string name="fail1">too low</string>
+    <string name="fail2">too high</string>
+    <string name="fail3">Please Reset</string>
+    <!--<string name=""></string>-->
+
 </resources>
