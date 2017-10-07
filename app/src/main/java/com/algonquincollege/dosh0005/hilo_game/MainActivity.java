@@ -52,14 +52,21 @@ public class MainActivity extends AppCompatActivity {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                short g = (short) Integer.parseInt(plGuess.getText().toString());
-                if (validateUsername(g)) {
-                    game.userAttempt(g);
-                    game_stat();
-                    Toast.makeText(getApplicationContext()
-                            , game_msg()
-                            , Toast.LENGTH_SHORT).show();
+
+                if(plGuess.getText().toString().length() > 0){
+                    short g = (short) Integer.parseInt(plGuess.getText().toString());
+                    if (validateUsername(g)) {
+                        game.userAttempt(g);
+                        game_stat();
+                        Toast.makeText(getApplicationContext()
+                                , game_msg()
+                                , Toast.LENGTH_SHORT).show();
+                    }
+                }else{
+                    plGuess.setError("Required");
+                    plGuess.requestFocus();
                 }
+
             }
         });
 
