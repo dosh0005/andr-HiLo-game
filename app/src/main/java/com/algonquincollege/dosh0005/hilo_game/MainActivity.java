@@ -17,7 +17,7 @@ import android.widget.Toast;
 /**
  * Created by Harsh Doshi - dosh0005
  * Date: 2017-10-05
- * Purpose : HiLo Game
+ * Purpose : HiLo Game - Assignment - fun
  */
 
 public class MainActivity extends AppCompatActivity {
